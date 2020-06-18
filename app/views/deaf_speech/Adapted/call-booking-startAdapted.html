@@ -1,0 +1,69 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<form class="content-block form measure" action="/book-callback/" method="post">
+  <!--<a href="disposition-callback-first-001" class="button-back">Back</a>-->
+
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        <a href="#tel">Enter a phone number</a>
+      </p>
+    </div>
+  {% endif %}
+
+  <h1>A nurse needs to phone you</h1>
+
+  <p>
+    We think you might need urgent medical help. A nurse will phone you within
+    30 minutes and tell you what to do next.
+  </p>
+  <p>
+    If we can’t contact you within that time emergency services may be sent to
+    check you’re okay.
+  </p>
+
+  <h2>How should we contact you?</h2>
+  <br>
+  <div>
+  <label class="block-label">
+    <input id="location" name="location" value="home" type="radio" class="selection-button-radio">
+    <span>interpreterNow</span>
+    <details>
+      <summary><span>What's this?</span></summary>
+      <div>
+        [xxxx]
+      </div>
+    </details>
+  </label>
+
+  <label class="block-label">
+    <input id="location" name="location" value="away" type="radio" class="selection-button-radio">
+    <span>Text relay</span>
+    <details>
+      <summary><span>What's this?</span></summary>
+      <div>
+        [xxxx]
+      </div>
+    </details>
+  </label>
+  </div>
+  <div class="form-group">
+    <p>
+      <button type="submit" class="button">Next</button>
+    </p>
+  </div>
+
+  <input type="hidden" name="backUrl" value="/forced-callback/call-booking-start">
+  <input type="hidden" name="forwardUrl" value="/forced-callback/call-booked">
+  <input type="hidden" name="renderTemplate" value="forced-callback/call-booking-start.html">
+
+</form>
+
+{% endblock %}

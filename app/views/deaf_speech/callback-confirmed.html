@@ -1,0 +1,76 @@
+{% set suppress_feedback = true %}
+
+{% set tel = "07979 654 789" %}
+{% if session.callBooking.tel %}
+  {% set tel = session.callBooking.tel %}
+{% endif %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<div class="content-block measure">
+
+  <h1>You should get a call within [NUM] hours</h1>
+  <p>
+    It was booked at <span id="timestamp">{{ now }}</span>.
+  </p>
+  <script type="text/javascript">
+    var now = new Date()
+      .toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' })
+      .toLowerCase()
+      .replace(/:/g, '.');
+    document.getElementById('timestamp').textContent = now;
+  </script>
+  <p>
+    A nurse will use text relay to call {{ tel }}. The number may show as
+    ‘unknown’ on your display.
+  </p>
+  <div class="callout callout--info">
+    <p>
+      This call will be through text relay.
+    </p>
+  </div>
+  <details>
+    <summary><span>What if I don’t get a call in X minutes?</span></summary>
+    <div>
+      <p>
+        It’s safe to wait a bit longer, but if you’re worried use text relay to call 18001 111 and
+        they’ll tell you what to do next.
+      </p>
+      <p>
+        If we can’t speak to you in that time, emergency services might be sent
+        to make sure you’re ok.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if I miss the call?</span></summary>
+    <div>
+      <p>
+        A nurse will try and call you up to 3 times.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if my symptoms get worse while I’m waiting?</span></summary>
+    <div>
+      <p>Contact 111. The text relay number is 18001 111.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>Can I cancel the call?</span></summary>
+    <div>
+      <p>If you need to cancel contact 111 and tell them you booked a call online.
+      <br>The text relay number is 18001 111.</p>
+    </div>
+  </details>
+</div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<form class="content-block form measure" action="/book-callback/" method="post">
+  <!--<a href="disposition-callback-first-001" class="button-back">Back</a>-->
+
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        <a href="#tel">Enter a phone number</a>
+      </p>
+    </div>
+  {% endif %}
+
+  <h1>Why we need your details</h1>
+
+  <p>
+    Sending your phone number, name and home postcode helps the pharmacist find your NHS number.
+    </p>
+    <p>
+      As they'll know who you are you'll pay standard NHS charges. If you're exempt you won't pay. </p>
+      <p>
+        You might be asked to show some identification when yu get there.
+  </p>
+  <h3>Contacting them before you go</h3>
+  <p>
+  If you phone them before you go they'll tell you:
+  <ul>
+    <li>if they're able to give you the medicine</li>
+    <li>if they have it in stock</li>
+    <li>what to do if they can't help</li>
+    </ul>
+    If you don't contact or go to the pharmacy they'll have to phone you to make sure you're OK.
+  </p>
+  <div>
+    <p>
+      <button href="availableServices" type="submit" class="button">Enter my details</button>
+    </p>
+  </div>
+
+</form>
+
+{% endblock %}

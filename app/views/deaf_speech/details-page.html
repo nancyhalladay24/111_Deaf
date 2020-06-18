@@ -1,0 +1,53 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+
+    <h1 class="nhsuk-heading-xl">
+      Other ways to contact 111
+    </h1>
+    <h3>Text relay</h3>
+    <div>
+    <p>
+      Call 18001 111 using text relay, 24 hours a day.
+    </p>
+    </div>
+    <h3>British sign language (BSL)</h3>
+    <div>
+    <p>
+      Use <a href="https://interpreternow.co.uk/nhs111">interpreternow.co.uk/nhs111</a>
+    </p>
+    </div>
+    <h3>Help in other languages</h3>
+    <div>
+    <p>
+      Call 111 and ask for an interpreter.
+      </p>
+      <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+      <h4>If you need help in an emergency</h4>
+      <p>Text relay users can call 18000 to get through to 999.</p>
+      </div>
+
+    <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="#">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back</a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}

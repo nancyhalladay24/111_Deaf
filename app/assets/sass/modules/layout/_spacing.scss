@@ -1,0 +1,55 @@
+.clearfix {
+  @extend %contain-floats;
+}
+
+.shunt {
+  margin-top: $leading*2;
+}
+
+.shunt-2 {
+  margin-top: $leading*4;
+}
+
+.shunt-3 {
+  margin-top: $leading*6;
+}
+
+.content-seperator {
+    width: 130px;
+    height: 4px;
+    background-color: $grey-5;
+    margin-bottom: $leading*4;
+}
+
+.content-seperator--equalvertspacing {
+    margin-top: $leading*2;
+    margin-bottom: $leading*2;
+}
+
+.content-seperator--equalvertspacing--large {
+    margin-top: $leading*5;
+    margin-bottom: $leading*4;
+}
+
+.content-seperator--grey3 {
+    background-color: $grey-3;
+}
+
+.content-seperator--white {
+    background-color: $white;
+}
+
+.content-seperator--dark-blue {
+    background-color: $dark-blue;
+}
+
+.or-seperator {
+  margin: $baseline-grid-unit*10 0 0 0;
+  border-top: $baseline-grid-unit solid $grey-5;
+  span {
+    position: relative;
+    top: -$baseline-grid-unit*4;
+    background-color: $white;
+    padding-right: $baseline-grid-unit*2;
+  }
+}

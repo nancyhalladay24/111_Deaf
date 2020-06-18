@@ -1,0 +1,173 @@
+@import "tools/contain-floats";
+@import "tools/media-queries";
+@import "tools/tints";
+@import "tools/mixins/addons";
+@import "tools/mixins/button";
+@import "tools/hidden";
+
+@import "variables/colours";
+@import "variables/frutiger";
+
+//Typography
+@import "modules/typography/base";
+@import "modules/typography/headings";
+@import "modules/typography/paragraphs";
+@import "modules/typography/lists";
+@import "modules/typography/formatting";
+@import "modules/typography/links";
+
+// Layout and grid
+@import "modules/layout/layout";
+@import "modules/layout/grid";
+@import "modules/layout/spacing";
+
+// Modules
+@import "modules/banner/prototype";
+@import "modules/banner/service-banners";
+@import "modules/banner/survey-banner";
+@import "modules/callout/callout";
+@import "modules/cards/service-card";
+@import "modules/controls/action-link";
+@import "modules/controls/breadcrumbs";
+@import "modules/controls/buttons";
+@import "modules/data/check-details";
+@import "modules/data/opening-times";
+@import "modules/data/table";
+@import "modules/disclosure/details";
+@import "modules/disclosure/collapse";
+@import "modules/dispositions/care-advice";
+@import "modules/dispositions/disposition-unit";
+@import "modules/feedback/feedback";
+@import "modules/footer-global/footer";
+@import "modules/forms/date";
+@import "modules/forms/postcode";
+@import "modules/forms/errors";
+@import "modules/forms/fieldset";
+@import "modules/forms/form";
+@import "modules/forms/input";
+@import "modules/forms/input-hinted";
+@import "modules/forms/label";
+@import "modules/forms/radio-checkbox";
+@import "modules/forms/search";
+@import "modules/forms/textarea";
+@import "modules/gp-details/gp-details";
+@import "modules/gp-lookup/gp-lookup";
+@import "modules/header-global/header-global";
+@import "modules/header-local/header-panel-local";
+@import "modules/image/image";
+@import "modules/interrupt/interrupt";
+@import "modules/listing/address-listing";
+@import "modules/loader/loader";
+@import "modules/location/location";
+@import "modules/media/media";
+@import "modules/modal/modal";
+@import "modules/navigation/a-z";
+@import "modules/nhsid/nhsid";
+@import "modules/overlay/overlay";
+@import "modules/search/categories";
+@import "modules/search/results";
+@import "modules/signage/info";
+@import "modules/services/service-primary";
+@import "modules/services/service-listings";
+
+/**
+  The [class^="nhsuk-"] selector is used so that for the new NHS.UK Frontend styles
+  we can bring them in on a component by component basis. Some pages will also use it
+  such as .nhsuk-core to namespace the entire page. Our components that use the NHS.UK styles
+  are imported here so they have access to the correct mixins.
+*/
+
+[class^="nhsuk-"] {
+  /* nhsuk-frontend components */
+  @import "node_modules/nhsuk-frontend/packages/core/all";
+  /* nhsuk-frontend components */
+  @import "node_modules/nhsuk-frontend/packages/components/action-link/action-link";
+  @import "node_modules/nhsuk-frontend/packages/components/back-link/back-link";
+  @import "node_modules/nhsuk-frontend/packages/components/breadcrumb/breadcrumb";
+  @import "node_modules/nhsuk-frontend/packages/components/button/button";
+  @import "node_modules/nhsuk-frontend/packages/components/emergency-alert/emergency-alert";
+  @import "node_modules/nhsuk-frontend/packages/components/images/images";
+
+  /* MAT'S ANNOYING OVERRIDES */
+  .button {
+    @extend .nhsuk-button;
+    border-radius: 0;
+    width: 100%;
+    @include media(mid) {
+      width: auto;
+    }
+  }
+
+  .nhsuk-global-alert {
+    @include nhsuk-responsive-margin(8, 'bottom')
+  }
+
+  .shunt {
+    @include nhsuk-responsive-margin(4, 'top')
+  }
+  .shunt-2 {
+    @include nhsuk-responsive-margin(6, 'top')
+  }
+  .shunt-3 {
+    @include nhsuk-responsive-margin(8, 'top')
+  }
+
+  .footer-container {
+    a {
+      @include nhsuk-link-style-inverted;
+      color: $white;
+    }
+  }
+
+  .small {
+    font-size: 14px;
+    line-height: $baseline-grid-unit*5;
+    @include media(mid) {
+      font-size: 16px;
+      line-height: $baseline-grid-unit*6;
+    }
+  }
+
+  details {
+    & > summary {
+      @include nhsuk-typography-responsive(19);
+    }
+    & > div {
+      padding-top: $baseline-grid-unit*4;
+      @include media(mid) {
+        line-height: $baseline-grid-unit*6;
+      }
+    }
+  }
+
+  .check-details {
+    @include nhsuk-typography-responsive(19);
+  }
+
+  /*.collapse-content {
+    margin-top: $baseline-grid-unit*4;
+    @include media(mid) {
+      margin-top: $baseline-grid-unit*6;
+    }
+  }*/
+
+  .nhsuk-image {
+    background-color: $grey-5;
+  }
+  .callout .nhsuk-image {
+    background-color: $white;
+  }
+
+  .opening-times {
+    .single,
+    .multi {
+      @include nhsuk-typography-responsive(19);
+    }
+  }
+
+  .error-summary {
+    a {
+      color: $error-colour;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{% set question = "Have you got an agonising headache, right now, like you were suddenly hit with something hard?" %}
+{% if session.userJourney.question.question %}
+  {% set question = session.userJourney.question.question %}
+{% endif %}
+
+{% set help = "This is a headache that came on in seconds like a thunder clap, if it's any other type of headache answer no." %}
+{% if session.userJourney.question.help %}
+  {% set question = session.userJourney.question.help %}
+{% endif %}
+
+{% set answer = "Yes" %}
+{% if session.userJourney.question.userAnswer %}
+  {% set answer = session.userJourney.question.userAnswer %}
+{% endif %}
+
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{{ journey }}
+{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Tell us if you want to look at this question again
+      </p>
+    </div>
+  {% endif %}
+
+  <h1>Check your answer</h1>
+
+  <p>
+    You answered “{{ answer }}” to this question:
+  </p>
+
+  <div class="callout callout--attention">
+    <p>{{ question }}</p>
+    {% if help !== '' %}
+    <p class="small">{{ help }}</p>
+    {% endif %}
+  </div>
+
+  <p>
+    This means you may need urgent help.
+  </p>
+
+  <form class="form" method="post">
+    <p><b>Do you want to look at this question again?</b></p>
+    <fieldset class="shunt form-group {% if error %}-errors{% endif %}">
+      {% if error %}
+        <p class="error-hint">Choose one option</p>
+      {% endif %}
+      <label for="yes" class="block-label">
+        Yes
+        <input type="radio" id="yes" name="revisitQuestion" value="yes">
+      </label>
+      <label for="no" class="block-label">
+        No
+        <input type="radio" id="no" name="revisitQuestion" value="no">
+      </label>
+    </fieldset>
+
+    <div class="form-group -controls">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}

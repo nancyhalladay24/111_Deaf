@@ -1,0 +1,35 @@
+a {
+  &:link {
+    color: $link-colour;
+  }
+
+  &:visited {
+    color: $link-visited-colour;
+  }
+
+  &:hover {
+    color: $link-hover-colour;
+  }
+
+  &:active {
+    color: $link-active-colour;
+  }
+
+  &:focus {
+    outline: 3px solid $focus-colour;
+  }
+}
+
+.link--reverse-polarity {
+  @include link-reverse-polarity;
+}
+
+a.link-prototype {
+  font-size: 16px;
+  color: $grey-4;
+}
+
+a.link-prototype:visted {
+  color: $grey-4;
+}
+

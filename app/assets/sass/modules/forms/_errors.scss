@@ -1,0 +1,44 @@
+.error-summary {
+  @extend %contain-floats;
+
+  margin: $baseline-grid-unit*4 0;
+  border: $baseline-grid-unit solid $error-colour;
+  padding: 0 $baseline-grid-unit*4;
+
+  color: $error-colour;
+  font-weight: $boldweight;
+
+  .error-heading {
+    margin-top: $baseline-grid-unit*4;
+    color: $text-colour;
+  }
+  a {
+    color: $error-colour;
+  }
+}
+
+.error-hint {
+  display: block;
+  color: $error-colour;
+  font-weight: $boldweight;
+}
+
+.form-group.-errors {
+
+  border-left: $baseline-grid-unit solid $error-colour;
+  padding-left: $baseline-grid-unit*4;
+
+  input,
+  textarea {
+    border-color: $error-colour;
+  }
+  .js-enabled & .selection-button-radio::before,
+  .js-enabled & .selection-button-checkbox::before {
+    border-color: $error-colour;
+  }
+}
+
+.error-indent {
+  border-left: $baseline-grid-unit solid $error-colour;
+  padding-left: $baseline-grid-unit*4;
+}

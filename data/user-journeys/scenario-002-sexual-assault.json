@@ -1,0 +1,80 @@
+{
+  "dx" : "dx94",
+  "question" : {
+    "question" : "To make sure you get the support you need, we need to ask if you’ve been sexually assaulted?",
+    "help" : "",
+    "answers" : [
+      "Yes",
+      "I’m not sure",
+      "No"
+    ],
+    "userAnswer" : "Yes"
+  },
+  "revalidation" : {
+    "offered" : false,
+    "type" : ""
+  },
+  "services" : {
+    "preamble" : "<p>If you think you might report the assault to the police:</p><ul><li>cover any cuts, but don’t wash them</li><li>don’t change or wash your clothes</li></ul><div class=\"callout callout--attention\"><p>Call 999 to report it to the police. GOV.UK has information on whathappens when you <a href=\"https://www.gov.uk/report-rape-sexual-assault\">report a rape or sexual assault.</a></p></div>",
+    "primary" : {
+      "physical" : true,
+      "name" : "Whitechapel Haven",
+      "important" : "<p>The Havens are specialist centres in London for people who have been raped or sexually assaulted.</p><div class=\"callout callout--attention\"><p>Open 24 hours but you must phone 020 3299 6900 first for advice and an appointment.</p></div>",
+      "address" : "Whitechapel Haven<br>The Royal London Hospital<br>Whitechapel Road<br>London<br>E1 1BB",
+      "openingTimes" : "<p>Open 24 hours</p>",
+      "lat" : "51.518359",
+      "long" : "-0.059963",
+      "distance" : "2.4 miles",
+      "postscript" : "<div class=\"callout callout--info\"><p>You can search for <a href=\"https://www.nhs.uk/service-search/Rape-and-sexual-assault-referral-centres/LocationSearch/364\"> sexual assault referral centres</a> by postcode on NHS UK. These centres have trained staff who can help if you’ve been sexually assaulted and don’t want to go to your local hospital. They’re not in every area.</p></div>"
+    },
+    "furtherServices" : {
+      "physical" : [
+        {
+          "name" : "Paddington Haven",
+          "important" : "<p>Open 24 hours but you must phone 020 3299 6900 first for advice and an appointment.</p>",
+          "address" : "Paddington Haven<br>St Marys Hospital<br>Praed Street<br>London<br>W2 1NY",
+          "openingTimes" : "Open 24 hours",
+          "lat" : "51.517415",
+          "long" : "-0.174041",
+          "distance" : "3.5 miles"
+        },
+        {
+          "name" : "Emergency Department, St Thomas Hospital",
+          "important" : "",
+          "address" : "Emergency Department<br>St Thomas Hospital<br>Westminster Bridge Road<br>London<br>SE1 7EH",
+          "openingTimes" : "Open 24 hours",
+          "lat" : "51.498244",
+          "long" : "-0.119203",
+          "distance" : "0.8 miles"
+        },
+        {
+          "name" : "Emergency Department, Kings College Hospital",
+          "important" : "",
+          "address" : "Emergency Department<br>Kings College Hospital<br>Denmark Hill<br>London<br>SE5 9RS",
+          "openingTimes" : "Open 24 hours",
+          "lat" : "51.467897",
+          "long" : "-0.094346",
+          "distance" : "2 miles"
+        }
+      ],
+      "nonphysical" : [
+        {
+          "name" : "The Remote Service",
+          "important" : "The Remote Service are specialist advisors in London for people who have been raped or sexually assaulted.",
+          "openingTimes" : "Available 24 hours",
+          "action" : "<p><a href=\"javascript:return false;\"><b>Book a call</b></a></p>"
+        },
+        {
+          "name" : "Another Remote Service",
+          "important" : "Another Remote Service are specialist advisors in London for people who have been raped or sexually assaulted.",
+          "openingTimes" : "Available 24 hours",
+          "action" : "<p><a href=\"javascript:return false;\"><b>Call 0800 1234 1234</b></a></p>"
+        }
+      ],
+      "mapCenter" : {
+        "lat" : "51.49741772886781",
+        "long" : "-0.10528160351566385"
+      }
+    }
+  }
+}

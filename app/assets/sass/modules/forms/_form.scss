@@ -1,0 +1,62 @@
+form,
+.form {
+  @extend %contain-floats;
+  display: block;
+}
+
+.form-group {
+  @extend %contain-floats;
+
+  clear: both;
+
+  &.-inline {
+    display: inline-block;
+    margin: 0;
+    margin-right: 2em;
+  }
+
+  &.-controls {
+    margin: $leading 0;
+
+    @include media(mid) {
+      float: left;
+    }
+
+    & .button {
+      @include media(mid) {
+        float: right;
+      }
+    }
+  }
+}
+
+ .form-group-extra-bottom-margin {
+    margin-bottom: $leading*4;
+  }
+
+// Hide toggled content
+.js-enabled .toggle-content {
+    display: none;
+}
+
+.toggle-content {
+  padding-top: $leading*2;
+  margin-left:$leading*2+(4px);
+  padding-left:$leading*2;
+  border-left: $leading/2 solid $bright-blue;
+}
+
+.toggle-content-error {
+  border-color: $red;
+}
+
+.select-address {
+    display: block;
+    cursor: pointer;
+    height: 4rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    border: 2px solid RGB(230,230,230);
+    width: 100%;
+    font-size: 20px;
+}

@@ -1,0 +1,75 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}Buttons{% endblock %}
+
+{% block content %}
+
+<div class="measure content-block">
+
+  <p>
+    <a href="/_gallery" class="button-back">Back</a>
+  </p>
+
+  <h1>Buttons</h1>
+
+  <p>
+    <button class="button">Primary</button>
+  </p>
+
+  <p>
+    <button class="button-secondary">Secondary</button>
+  </p>
+
+  <p>
+    <button class="button-tertiary">Multiple actions (ie edit)</button>
+  </p>
+
+  <p>
+    <button class="button-multiple-calls">A blue button [shrug]</button>
+  </p>
+
+  <p>
+    <a href="javascript: return false;" class="action-link">
+      <span>Use my location</span>
+      <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+      </svg>
+    </a>
+  </p>
+
+  <p class="search">
+    <input type="text" id="query" name="query" autocomplete="off">
+    <button type="submit" class="button">Search</button>
+  </p>
+
+  <style media="screen">
+    .button.loading {
+      min-height: 48px;
+      position: relative;
+      cursor: not-allowed;
+      color: rgba(255, 255, 255, 0);
+      opacity: 0.5;
+    }
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -8px;
+      margin-left: -8px;
+      border-top-color: #fff;
+      border-right-color: #fff;
+      border-bottom-color: #fff;
+    }
+  </style>
+
+  <p>
+    <button type="button" class="button loading" disabled="disabled">
+      Next
+      <span class="loader"></span>
+    </button>
+  </p>
+
+</div>
+
+{% endblock %}

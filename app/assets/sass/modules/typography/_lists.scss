@@ -1,0 +1,186 @@
+ul, ol {
+  margin: $leading 0 $leading*2 0;
+  padding-left: 1em;
+  list-style-position: outside;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+    margin:  0 0 $leading 0;
+    padding-left: 0;
+}
+
+.list--numbered {
+    counter-reset: a;
+    padding-left: 0;
+}
+.list--numbered li {
+  list-style: none;
+  padding-bottom: $leading*2;
+}
+.list--numbered li:before {
+    content: counter(a);
+    counter-increment: a;
+    border: 3px solid #005eb8;
+    border-radius: 50px;
+    color: #005eb8;
+    display: inline-block;
+    font-weight: 700;
+    height: 40px;
+    margin-right: .5em;
+    text-align: center;
+    width: 40px;
+    line-height: 2.0em;
+}
+
+@media (min-width: 925px) {
+    .page-section *+* {
+        margin-top: 32px;
+    }
+}
+
+ul.link-list {
+    list-style-type: none;
+    padding: 0;
+}
+ ul.address-list{
+    list-style-type: none;
+    padding: 0;
+
+    > li {
+        margin: 0;
+    }
+ }
+
+ ul.tabular-data {
+  list-style-type: none;
+  padding-left: 0;
+
+  @include media(mid) {
+     // padding-left: $leading*4;
+  }
+
+ }
+
+li.tabular-data-row {
+  @extend %contain-floats;
+  border-top: 1px solid $grey-5;
+  border-bottom: 1px solid $grey-5;
+  padding-top: $leading*2;
+  display: block;
+  padding-bottom: $leading*2;
+  margin-bottom: $leading*3;
+  // border: 1px solid red;
+
+  @include media(large) {
+    padding-bottom: $leading;
+  }
+
+  clear: both;
+
+  > div {
+    display: inline-block;
+    clear: both;
+  }
+
+  > .detail {
+    float: left;
+  }
+
+  > .edit {
+    float: right;
+
+    @include media(mid) {
+     margin-top: $leading*5;
+    }
+  }
+
+  >.callout {
+    margin-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: $leading*2;
+
+    @include media(mid){
+      width: initial;
+      // margin: 0 0 $leading*4 0;
+    }
+  }
+
+}
+
+.data-display-telephone {
+  min-height: $leading*6;
+}
+
+.app-panel {
+      list-style: none;
+      padding:$leading*2 0 0 0;
+      display: inline-block;
+
+  >.appstore {
+    clear: both;
+    @media (min-width: 600px) {
+      width: 100%;
+      padding-top: 25px;
+      margin-left: 120px;
+    }
+  }
+
+ >.icon {
+    float: left;
+    margin-right:$leading*4;
+ }
+
+  >.header{
+    @extend h2;
+    float: left;
+    width: 300px;
+    display: inline-block;
+    margin: 0;
+
+    @include media(mid) {
+
+    }
+
+  }
+
+  >.description {
+    float: left;
+    width: 300px;
+    display: inline-block;
+    margin: 0;
+    font-size: 16px;
+    color: $grey-2;
+
+    > ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      line-height: $leading*2;
+    }
+
+  }
+
+}
+
+
+// NHS.UK redesign typography which can be used for testing
+.nhs-redesign {
+  ul, ol {
+    margin: $baseline-grid-unit*4 0 0 0;
+    @include media(mid) {
+      margin-top: $baseline-grid-unit*6;
+    }
+  }
+  li {
+    margin: $baseline-grid-unit 0;
+  }
+}

@@ -1,0 +1,58 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Tell us if this where {% if session.proxy == true %}they{% else %}you{% endif %} are or not.
+      </p>
+    </div>
+  {% endif %}
+
+  <h1 class="nhsuk-heading-l">Are {% if session.proxy == true %}they{% else %}you{% endif %} here?</h1>
+  <div class="callout callout--info">
+    <p>
+      If we know the address we can send help if we need to.
+    </p>
+  </div>
+
+  <p>
+    {% for addressLine in session.addressResults[0] %}
+      {% if addressLine !== '' %}
+        {{ addressLine }}<br>
+      {% endif %}
+    {% endfor %}
+    {{ session.postcode }}
+  </p>
+
+  <form method="post" class="form" action="/book-callback/confirm-location-single-address">
+    <fieldset class="form-group {% if error %}-errors{% endif %}">
+      {% if error %}
+        <p class="error-hint">Choose one option</p>
+      {% endif %}
+      <label class="block-label">
+        <input id="correct-address" name="correct-address" value="true" type="radio" class="selection-button-radio">
+        Yes
+      </label>
+      <label class="block-label">
+        <input id="correct-address" name="correct-address" value="false" type="radio" class="selection-button-radio">
+        No
+      </label>
+    </fieldset>
+    <div class="form-group">
+      <p>
+        <button type="submit" class="button">Next</button>
+      </p>
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}

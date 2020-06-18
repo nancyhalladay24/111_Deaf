@@ -1,0 +1,37 @@
+p {
+  margin: $leading*2 0 $leading*2 0;
+}
+
+pre.user-input {
+  @extend body;
+  font-size: inherit;
+}
+
+p.tabular-prefix {
+    @extend .heading-prefix;
+}
+
+// NHS.UK redesign typography which can be used for testing
+body.nhs-redesign {
+  p {
+    margin: $baseline-grid-unit*4 0;
+    @include media(mid) {
+      margin: $baseline-grid-unit*6 0;
+    }
+  }
+
+  .small p,
+  p.small {
+    margin: $baseline-grid-unit*4 0;
+    @include media(mid) {
+      margin: $baseline-grid-unit*5 0;
+    }
+  }
+
+  .lede {
+    margin: $baseline-grid-unit*7 0;
+    @include media(mid) {
+      margin: $baseline-grid-unit*8 0;
+    }
+  }
+}

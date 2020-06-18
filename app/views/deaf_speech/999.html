@@ -1,0 +1,34 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-xl error-hint">Phone 999 now for an ambulance</h1>
+
+  <div class="callout callout--alert">
+    <h2>The 999 operator will ask:</h2>
+    <ul>
+      <li>
+        where you are - the area or postcode (or what's nearby if you don't know)
+      </li>
+      <li>
+        what phone number they can call you back on if you get cut off
+      </li>
+      <li>
+        what's happened
+      </li>
+      <li>
+        more about your symptoms - if you don't need an ambulance you'll get advice on what to do instead
+      </li>
+    </ul>
+  </div>
+  <p>
+    Deaf people should use text relay to call 18000.
+    </p>
+</div>
+{% endblock %}

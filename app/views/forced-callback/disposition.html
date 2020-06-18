@@ -1,0 +1,28 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1 class="h2">Based on your answers you should call 999</h1>
+  <div class="callout callout--info-alert">
+    <p>
+      You may need urgent medical help. We can’t rule out bleeding on the brain.
+    </p>
+  </div>
+</div>
+
+<div class="content-block measure">
+  <div class="callout callout--attention">
+    <p>I don’t want to call 999 - <a href="options">what else can I do?</a></p>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}

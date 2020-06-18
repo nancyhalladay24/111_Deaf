@@ -1,0 +1,45 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<form class="content-block measure form" method="post">
+
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        <a href="#tel">Enter a text relay number</a>
+      </p>
+    </div>
+  {% endif %}
+
+  <h1 class="nhsuk-heading-l">What number should we call?</h1>
+  <div class="form-hint measure">
+    <p>
+      Enter a mobile or landline number.
+      <br><br>If you have difficulty hearing or speaking you can enter a TextNumber to use text relay.
+      </p>
+  </div>
+  <div class="form-group {% if error %}-errors{% endif %}">
+    <input name="tel" id="tel" type="tel" value="{{ session.callBooking.tel }}" autocomplete="off">
+  </div>
+  <details>
+    <summary><span>What's a TextNumber?</span></summary>
+    <div>
+      <p>
+        A TextNumber is given to you when you sign up to <a href="https://www.relayuk.bt.com/relay-uk-services/relay-uk-app.html" target="_blank">text relay</a> or use a textphone.
+        <br><br>Your TextNumber will start with either 07777 or 03306.
+      </p>
+    </div>
+  </details>
+  <div class="form-group -controls">
+    <button type="submit" class="button">Next</button>
+  </div>
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="header-panel">
+  <h1 class="heading-xlarge">Check contact information</h1>
+</div>
+
+<div class="measure">
+  
+  <div class="content-block">
+
+    <p>Is the following information correct?</p>
+  
+   <form method="post" class="">
+
+      <ul class="tabular-data">
+        <li class="tabular-data-row">
+          <div>
+            <p class="tabular-prefix">We will call on this number:</p>
+            <p class="heading-xlarge data-display-telephone">{{ session.telephoneNumber }}</p>
+          </div>
+          <button type="submit" class="button -bordered edit" name="element" value="telephone">Change</button>   
+        </li>
+      </ul>
+
+      <div class="form-group -controls">
+        <a href="callback-confirmed"><div class="button">Book a phone call</div></a>
+      </div>
+      
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

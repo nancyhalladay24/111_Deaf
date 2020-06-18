@@ -1,0 +1,81 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}Index{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1>111 prototypes</h1>
+
+  <h2>Hearing and speech impairment support</h2>
+  <div class="callout  callout--info">
+    <h3>Selected design</h3>
+    <p><a href="/deaf_speech/index">Index</a></p>
+    <p><a href="/deaf_speech/01-get-help-now">Worsening advice</a></p>
+    <p><a href="/deaf_speech/details-page">Languages, BSL and text relay</a></p>
+    <h4>Outcomes</h4>
+    <p><a href="/deaf_speech/appointment-required-recommended-service">Minor injuries phone and go</a></p>
+    <p><a href="/deaf_speech/call-booking-start-TR">Book a call with a 111 nurse now</a></p>
+    <p><a href="/deaf_speech/call-booking-startTR">A nurse needs to call you - high acuity</a></p>
+    <p><a href="/deaf_speech/EDcall">ED nurse call</a></p>
+    <p><a href="/deaf_speech/mental-health-offer-callback">Mental health nurse call</a></p>
+    <p><a href="/deaf_speech/OOH">OOH</a></p>
+    <p><a href="/deaf_speech/Pharmacy">Pharmacy</a></p>
+    <p><a href="/deaf_speech/pharmacy-referral">Pharmacy referral explanation</a></p>
+    <p><a href="/deaf_speech/callback-confirmed">Callback confirmation</a></p>
+    <p><a href="/deaf_speech/EP-start">EP start</a></p>
+    <p><a href="/deaf_speech/EP-details">EP details</a></p>
+    <p><a href="/deaf_speech/dmirs-service-view-stage-2">EP Referral code</a></p>
+    <p><a href="/deaf_speech/pharmacyCAS">Pharmacy CAS</a></p>
+    <p><a href="/deaf_speech/pharmacyCASconfirmation">Pharmacy CAS confirmation</a></p>
+    <h4>Callback form</h4>
+    <p><a href="/deaf_speech/number1">Phone number</a></p>
+    <p><a href="/deaf_speech/numberEP">Phone number EP</a></p>
+    <p><a href="/deaf_speech/interpreter">Interpreter question</a></p>
+    <p><a href="/deaf_speech/language">Language question</a></p>
+    <p><a href="/deaf_speech/check-details-mvp">Check details page</a></p>
+    <p><a href="/deaf_speech/check-details-mvp-language">Check details page - language</a></p>
+    <p><a href="/deaf_speech/check-details-noAddress">Check details - no address</a></p>
+    <h4>999 </h4>
+    <p><a href="/deaf_speech/999">999</a></p>
+    <p><a href="/deaf_speech/999-CAT3">999 Cat 3</a></p>
+    <p><a href="/deaf_speech/999-loweracuity">999 Cat4</a></p>
+    <p><a href="/deaf_speech/call-999-no-address">Call 999 no address</a></p>
+    <h4>Covid</h4>
+    <p><a href="/deaf_speech/covid-dos-no-results">Covid call 111</a></p>
+    <p><a href="/deaf_speech/covid-call-booking-start">Covid book a call</a></p>
+    <p><a href="/deaf_speech/covid-callback-confirmed">Covid call back confirmation</a></p>
+    <p><a href="/deaf_speech/covid-callback-confirmed-language">Covid confirmation language</a></p>
+    <h4>Error</h4>
+    <p><a href="/deaf_speech/call111">Error - Call 111, can't help online</a></p>
+    <p><a href="/deaf_speech/error-call111">Error - Call 111</a></p>
+    <p><a href="/deaf_speech/error-duplicateBooking">Error - duplicate booking</a></p>
+  </div>
+  <div class="callout  callout--info">
+    <details>
+      <summary><span>Adapted design</span></summary>
+    <p><a href="/deaf_speech/Adapted/indexAdapted">Index</a></p>
+    <p><a href="/deaf_speech/Adapted/deaf">Are you deaf question</a></p>
+    <p><a href="/deaf_speech/Adapted/01-get-help-nowAdapted">Worsening</a></p>
+    <p><a href="/deaf_speech/Adapted/call-booking-startAdapted">Nurse call</a></p>
+    <p><a href="/deaf_speech/Adapted/call-booking-start2">Book a call</a></p>
+    <p><a href="/deaf_speech/Adapted/availableServices">Available services</a></p>
+    </details>
+    </div>
+
+  <h2>Other languages handling</h2>
+  <div class="callout  callout--attention">
+    <p><a href="/language/details-page">Information page</a></p>
+  </div>
+
+
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+{% endblock %}

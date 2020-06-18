@@ -1,0 +1,47 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<form class="content-block form measure" action="/book-callback/" method="post">
+  <!--<a href="disposition-callback-first-001" class="button-back">Back</a>-->
+
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        <a href="#tel">Enter a phone number</a>
+      </p>
+    </div>
+  {% endif %}
+
+  <h1>Book a call with a 111 nurse now</h1>
+
+  <p>
+    A nurse needs to speak to you so we can get you the right help.
+    <br>When you book a call, the 111 nurse will:
+    <ul>
+      <li>know what you've answered so far</li>
+      <li>advise you what to do next</li>
+      <li>book an appointment for you if you need one</li>
+      <li>use text relay or a BSL interpreter if you have difficulty hearing or speaking and would like them to. </li>
+      </ul>
+  </p>
+  <p>
+    If you don't book a call and just ring 111 you will have to start again from the beginning.
+  </p>
+  <div class="callout callout--info">
+    <p>You should get a call within 20 minutes. It's important that you wait to spek to the nurse.</p>
+  </div>
+  <div>
+    <p>
+      <button href="availableServices" type="submit" class="button">Book a nurse call</button>
+    </p>
+  </div>
+
+</form>
+
+{% endblock %}

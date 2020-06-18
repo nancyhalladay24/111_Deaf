@@ -1,0 +1,37 @@
+// local instance uses '_doc'
+// Bonsai uses 'doc'
+
+PUT pathways_full
+{
+  "settings": {
+    "number_of_shards": 1
+  },
+  "analysis": {
+    "analyzer": {
+      "custom_english": {
+        "type": "english",
+        "stopwords": [
+          "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if",
+          "in", "into", "is", "it", "of", "on", "or", "such", "that", "the",
+          "their", "then", "there", "these", "they", "this", "to", "was",
+          "will", "with", "without", "where"
+        ]
+      }
+    }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "categories": {
+          "type" : "keyword",
+          "index" : true
+        }
+      }
+    }
+  }
+}
+
+// bulk import commands
+curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/pathways_inc_alias/_doc/_bulk?pretty' --data-binary @searchdata-inc-alias.json
+
+curl -H 'Content-Type: application/x-ndjson' -XPOST 'BONSAI_URL/pathways_inc_alias/doc/_bulk?pretty' --data-binary @searchdata-inc-alias.json

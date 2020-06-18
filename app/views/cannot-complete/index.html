@@ -1,0 +1,47 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <div class="callout callout--attention">
+    <h1 class="nhsuk-heading-l">Call 111 to speak to an adviser now</h1>
+  </div>
+
+  <details>
+    <summary><span>Why can’t I do this online?</span></summary>
+    <div>
+      <p>
+        A mix of different symptoms, or a diagnosed condition, can’t be dealt
+        with online. You need to speak to an adviser.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What happens when I call?</span></summary>
+    <div>
+      <p>
+        Tell the adviser we have not been able to finish your assessment online.
+        You’ll be asked to answer similar questions, but you will get the right help.
+      </p>
+    </div>
+  </details>
+
+  <div class="content-seperator content-seperator_equalvertspacing shunt-2"></div>
+
+  <p>
+    <a href="javascript: return false;">Change my previous answer</a>
+  </p>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

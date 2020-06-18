@@ -1,0 +1,95 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid $grey-4;
+  margin-bottom: $leading*2;
+
+  @include media(mid) {
+    margin-bottom: $leading*4;
+  }
+
+  tr {
+    border-bottom: 1px solid $grey-4;
+  }
+
+  caption {
+    text-align: left;
+    padding: $leading $leading/8 $leading/2 $leading/8;
+  }
+
+  th, td {
+    display: block;
+    padding: $leading $leading/8 $leading/2 $leading/8;
+
+    text-align: left;
+    //vertical-align: top;
+
+    font-weight: $bodyweight;
+    @extend .small;
+
+    @include media(mid) {
+      display: table-cell;
+      padding: $leading $leading/2;
+    }
+  }
+
+  th {
+    padding-bottom: 0;
+    font-weight: $boldweight;
+    color: $grey-1;
+
+    @include media(mid) {
+      padding-bottom: $leading;
+      font-weight: $bodyweight;
+    }
+  }
+
+  .control {
+    text-align: right;
+  }
+
+  &.natural {
+    width: 100%;
+
+    @include media(mid) {
+      width: auto;
+    }
+  }
+
+  &.compact {
+    margin-bottom: $leading;
+    caption {
+      padding: 0 $baseline-grid-unit/2 $baseline-grid-unit 0;
+      @include media(mid) {
+        padding: 0 $baseline-grid-unit $baseline-grid-unit*3 0;
+      }
+    }
+    th, td {
+      display: table-cell;
+      padding: $baseline-grid-unit $baseline-grid-unit/2 $baseline-grid-unit 0;
+      color: $black;
+
+      @include media(mid) {
+        padding: $baseline-grid-unit*3 $baseline-grid-unit calc(#{$baseline-grid-unit*3} - 1px) 0;
+      }
+    }
+    th {
+      font-weight: $bodyweight;
+    }
+  }
+
+  &.opening-hours {
+    
+    @include media(mid) {
+      width: auto;
+    }
+
+    th, td {
+      @include media(mid) {
+        display: table-cell;
+        padding: $baseline-grid-unit*3 $baseline-grid-unit*3;
+      }
+    }
+  }
+
+}

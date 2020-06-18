@@ -1,0 +1,44 @@
+.service-listing {
+  display: block;
+  position: relative;
+  margin-top: $baseline-grid-unit*3;
+  padding: $baseline-grid-unit*3;
+  border: 0;
+  border-left: $baseline-grid-unit solid $grey-4;
+  background: $grey-5;
+  text-decoration: none;
+
+  @include media(large) {
+    margin-top: $baseline-grid-unit*6;
+  }
+
+  & > ul {
+    margin-top: 0;
+  }
+}
+
+.multiple-service-listing {
+
+  .js-enabled & .collapse-title-indicator-verbose {
+    text-decoration: underline;
+  }
+
+  .service-details-container {
+    margin-top: $baseline-grid-unit;
+    margin-bottom: $baseline-grid-unit * 6;
+
+    @include media(large) {
+      margin-bottom: $baseline-grid-unit * 12;
+    }
+
+    .map-frame {
+      height: auto;
+    }
+  }
+
+  .service-details {
+    .unit > .tel-cta:first-child {
+      margin-top: 0 !important;
+    }
+  }
+}

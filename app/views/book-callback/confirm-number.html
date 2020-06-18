@@ -1,0 +1,35 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<div class="content-block measure clearfix">
+
+  <h1 class="nhsuk-heading-l">Is this the right number to call?</h1>
+
+  {% if session.callBooking.who === 'someone-else' %}
+  <div class="callout callout--info">
+    <p>
+      We’ll call your number. {{ session.callBooking.name.firstname }} might
+      have to answer some questions during the call.
+    </p>
+  </div>
+  {% endif %}
+
+  <div class="callout callout--attention">
+    <p class="lede">{{ session.callBooking.tel }}</p>
+  </div>
+
+  <p>
+    <a href="/book-callback/change-number">No, I need to change this number</a>
+  </p>
+
+  <div class="form-group -controls">
+    <a href="{{ session.callBooking.forwardUrl }}" class="button">Yes, book call</a>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<form class="content-block form measure" action="/book-callback/" method="post">
+  <!--<a href="disposition-callback-first-001" class="button-back">Back</a>-->
+
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        <a href="#tel">Enter a phone number</a>
+      </p>
+    </div>
+  {% endif %}
+
+  <h1>Get a call from a nurse</h1>
+
+  <p>
+    Based on what you've told us we think you need medical help. Speaking to a nurse can help you decide what to do next.</p>
+    <p> Deaf users can book a text relay call.</p>
+    <p>The nurse will tell you:
+    <ul>
+      <li>if you need help right now, or if it's safe to wait</li>
+      <li>where you might be seen quicker than going to A&E</li>
+      </ul>
+  </p>
+  <div class="callout callout--info">
+    <p>If you don't want to book a call we'll show you places you can go instead. This might mean you have to wait longer to be seen.</p>
+  </div>
+  <div>
+    <h4>Do you want to book a call?</h4>
+    <form id="postcode-container" method="post">
+      <fieldset class="form-group {% if error %}-errors{% endif %}">
+        {% if error %}
+          <p class="error-hint">Do you want to book a call?</p>
+        {% endif %}
+        <label class="block-label">
+          <input id="location" name="location" value="home" type="radio" class="selection-button-radio">
+          <span>Yes</span>
+        </label>
+        <label class="block-label">
+          <input id="location" name="location" value="away" type="radio" class="selection-button-radio">
+          <span>No</span>
+        </label>
+      </fieldset>
+    <p>
+      <button href="availableServices" type="submit" class="button">Next</button>
+    </p>
+  </div>
+
+</form>
+
+{% endblock %}

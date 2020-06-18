@@ -1,0 +1,54 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+{% include 'finding-pathways/_partial-category-back-link.html' %}
+
+<div class="content-block measure">
+  <h1 class="heading-xxlarge">All topics</h1>
+  <p class="form-hint">{{ results.length }} topics</p>
+
+  <!--
+  Age: {{ session.demographics.age }}
+  Age: {{ session.demographics.ageCategory }}
+  Sex: {{ session.demographics.sex }}
+  -->
+
+  {% for result in results %}
+  <!--
+  {{ result._source.PW_Age }}
+  {{ result._source.PW_Gender }}
+  -->
+  <a href="/weird-questions?pw={{ result._source.PW_id }}" class="topic">
+    <span class="topic-title">
+      {{ result._source.DigitalTitles | safe }}
+    </span>
+    <span class="topic-description">
+      {{ result._source.DigitalDescription | safe }}
+    </span>
+  </a>
+  {% endfor %}
+
+</div>
+
+<div class="content-block shunt-2 measure">
+  <details>
+    <summary><span>I can’t find the right topic</span></summary>
+    <p>
+      You can try <a href="/finding-pathways/start">searching again</a> or <a href="browse">browsing topics by category.</a>
+    </p>
+
+    {% include 'finding-pathways/_partial-nhsuk-advice.html' %}
+
+    <p>
+      If you don’t know what to look for you can <a href="/weird-questions?pw=1346">rule out serious conditions.</a>
+    </p>
+  </details>
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
