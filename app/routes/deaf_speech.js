@@ -34,7 +34,7 @@ router.post('/name', function(req,res){
 
 router.post('/number1', function(req, res) {
   req.session.number = req.body['tel']
-  if (req.body['tel'] === "07777801108"){
+  if (req.body['tel'].startsWith("07777") || req.body['tel'].startsWith("03306") === true) {
     res.redirect ('check-details-mvp');
   }
   else {
@@ -58,3 +58,15 @@ router.post('/language', function (req,res){
   req.session.langauge = req.body['language']
   res.redirect ('check-details-mvp-language');
 })
+
+//999 validation
+
+router.post('/call-booking-startTR', function (req,res){
+  req.session.number = req.body['tel']
+  if (req.body['tel'].startsWith("07777") || req.body['tel'].startsWith("03306") === true) {
+    res.redirect ('name');
+  }
+  else {
+    res.redirect('interpreter');
+  }
+});

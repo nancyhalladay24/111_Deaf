@@ -30,6 +30,7 @@ var userJourneys = require('./app/routes/user-journeys');
 
 var coronavirus = require('./app/routes/coronavirus');
 var deaf_speech = require('./app/routes/deaf_speech');
+var fullDf = require('./app/routes/fullDf');
 
 var app = express()
 
@@ -126,6 +127,7 @@ app.use('/user-journeys', userJourneys);
 
 app.use('/coronavirus', coronavirus);
 app.use('/deaf_speech', deaf_speech);
+app.use('/deaf_speech', fullDf);
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {

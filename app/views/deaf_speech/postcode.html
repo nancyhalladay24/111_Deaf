@@ -18,8 +18,11 @@
     {% endif %}
     <div class="form-group {% if error %}-errors{% endif %}">
       <h1 class="nhsuk-heading-l">
-        <label for="postcode">What’s the postcode?</label>
+        <label for="postcode">Where are you now?</label>
       </h1>
+      <div class="callout callout--info">
+        <p>We need to know where {% if session.proxy == true %}they{% else %}you{% endif %} are so we can find services to help.</p>
+      </div>
       {% if error %}
         <p class="error-hint">Enter a postcode</p>
       {% endif %}
@@ -29,7 +32,7 @@
       </div>
     </div>
     <div class="form-group">
-      <button type="submit" class="button">Next</button>
+      <button href="emergency-check" type="submit" class="button">Next</button>
     </div>
   </form>
 </div>
