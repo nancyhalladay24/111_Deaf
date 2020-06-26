@@ -113,4 +113,13 @@ router.post('/start', function(req, res){
   if (req.body['search'].startsWith("999 validation") === true) {
   res.redirect('call-booking-startTR');
   }
+  if (req.body['search'].startsWith("pharmacy CAS") === true) {
+  res.redirect('pharmacyCAS/pharmacyCAS');
+  }
+  if (req.body['search'].startsWith("nurse call") === true) {
+  res.redirect('callBack999/call-booking-startTR');
+  }
+  if (req.body['search'].startsWith("book call") === true) {
+  res.redirect('covid-call-booking-start');
+  }
 });
