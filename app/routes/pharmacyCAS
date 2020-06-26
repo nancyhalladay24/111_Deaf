@@ -1,0 +1,49 @@
+var express = require('express')
+var router = express.Router()
+
+module.exports = router
+
+router.post('/name', function(req,res){
+  req.session.name = req.body['firstname']
+  req.session.name = req.body['secondname']
+  res.redirect('number1');
+});
+
+router.post('/number1', function(req, res) {
+  req.session.number = req.body['tel']
+  if (req.body['tel'].startsWith("07777") || req.body['tel'].startsWith("03306") === true) {
+    res.redirect ('check-details-mvp');
+  }
+  else {
+    res.redirect('interpreter');
+  }
+});
+
+//Check details TextNumber
+
+router.post('/interpreter', function(req, res){
+  req.session.interpreter = req.body['interpreter']
+  if (req.body['interpreter'] === "true"){
+    res.redirect ('language');
+  }
+  else {
+    res.redirect ('check-details-neither');
+  }
+});
+
+router.post('/language', function (req,res){
+  req.session.langauge = req.body['language']
+  res.redirect ('check-details-mvp-language');
+})
+
+//999 validation
+
+router.post('/call-booking-startTR', function (req,res){
+  req.session.number = req.body['tel']
+  if (req.body['tel'].startsWith("07777") || req.body['tel'].startsWith("03306") === true) {
+    res.redirect ('name');
+  }
+  else {
+    res.redirect('interpreter');
+  }
+});

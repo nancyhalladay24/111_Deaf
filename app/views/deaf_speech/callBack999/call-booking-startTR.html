@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<form class="content-block form measure" action="/book-callback/" method="post">
+<form class="content-block form measure" method="post">
   <!--<a href="disposition-callback-first-001" class="button-back">Back</a>-->
 
   {% if error %}
@@ -41,7 +41,7 @@
   <div class="form-group {% if error.tel %}-errors{% endif %}">
     <label for="tel"{% if error %}class="error-hint"{% endif %}>
     </label>
-    <input name="tel" id="tel" type="tel" value="{{ session.callBooking.tel }}" autocomplete="off">
+    <input name="tel" id="tel" type="tel" autocomplete="off">
   </div>
   <details>
     <summary><span>What's a TextNumber?</span></summary>

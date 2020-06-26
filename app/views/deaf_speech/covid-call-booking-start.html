@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<form class="content-block form measure" action="/book-callback/" method="post">
+<form class="content-block form measure" action="covidBookCall/name" method="post">
   <!--<a href="disposition-callback-first-001" class="button-back">Back</a>-->
 
   {% if error %}
@@ -22,7 +22,7 @@
 
   <p>
     A nurse from the COVID clinical response service needs to speak to you.</p>
-    <p>Deaf users can book a text relay call.</p>
+    <p>Deaf people can book a text relay call.</p>
     <p>When you book a call, the 111 nurse will:
     <ul>
       <li>know what you've answered so far</li>
@@ -33,7 +33,7 @@
     It's important that you speak to the nurse. You should get a call within 2 hours. The 111 phone service is busy, so it could take longer than usual.
   </p>
   <div>
-      <form method="get" action="/covid-callback-confirmed">
+      <form>
       <button type="submit" class="button">Book a nurse call</button>
     </form>
   </div>

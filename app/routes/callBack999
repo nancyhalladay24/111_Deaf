@@ -1,0 +1,60 @@
+var express = require ('express')
+var router = express.Router()
+
+module.exports = router
+
+//Booking form start//
+var interpreter = 0;
+
+router.post('/call-booking-startTR', function(req,res){
+req.session.number = req.body['tel']
+req.session.interpreter1 = interpreter
+if (req.body['tel'].startsWith("07777") || req.body['tel'].startsWith("03306") === true) {
+  interpreter = 1;
+  res.redirect ('name');
+}
+else {
+  res.redirect('interpreter');
+}
+});
+
+
+//Check details TextNumber//
+
+router.post('/interpreter', function(req, res){
+  req.session.interpreter = req.body['interpreter']
+  req.session.interpreter1 = interpreter
+  if (req.body['interpreter'] === "true"){
+    interpreter = 2;
+    res.redirect ('language');
+  }
+  else {
+    res.redirect ('name');
+  }
+});
+
+router.post('/language', function (req,res){
+  req.session.langauge = req.body['language']
+  res.redirect ('name');
+});
+
+router.post('/name', function(req,res){
+  req.session.name = req.body['firstname']
+  req.session.name = req.body['secondname']
+  if (interpreter === 2){
+    res.redirect('check-details-mvp-language');
+  }
+  else {
+    res.redirect('check-details-mvp');
+  }
+});
+
+//Check details//
+
+router.post('/check-details-mvp-language', function(req,res){
+  res.redirect('callback-confirmed-language')
+});
+
+router.post('/check-details-mvp', function(req,res){
+  res.redirect('callback-confirmed')
+});

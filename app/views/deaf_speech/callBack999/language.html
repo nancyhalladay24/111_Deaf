@@ -1,0 +1,33 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Tell us if {% if session.proxy == true %}they’re{% else %}you’re{% endif %} at home or not
+      </p>
+    </div>
+  {% endif %}
+  <h1 class="nhsuk-heading-l">What language would you like help in?</h1>
+<div class="form-hint measure">
+  <p>Enter the name of the language in English</p>
+  </div>
+  <form class="content-block measure form" method="post">
+    <div class="form-group">
+      <label for="tel"><label>
+      <input name="language" id="language" type="text">
+    </div>
+    <div class="form-group -controls">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
