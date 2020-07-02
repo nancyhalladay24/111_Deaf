@@ -1,0 +1,67 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<div class="content-block measure clearfix">
+
+  <h1>Check details</h1>
+
+  <!-- ##################################################################### -->
+  <!-- single user, at home -->
+  <dl class="check-details -mvp">
+    <div class="-row">
+      <dt class="-key">
+        Name
+      </dt>
+      <dd class="-value">
+        Nancy Halladay
+      </dd>
+    </div>
+    <div class="-row">
+      <dt class="-key">
+        Date of birth
+      </dt>
+      <dd class="-value">
+        5 January 1978
+      </dd>
+    </div>
+    <div class="-row">
+      <dt class="-key">
+        Sex
+      </dt>
+      <dd class="-value">
+        Female
+      </dd>
+    </div>
+    <div class="-row">
+      <dt class="-key">
+        Home address
+      </dt>
+      <dd class="-value">
+        7 Norwich road<br>Caister-on-sea<br>Great Yarmouth<br>Norfolk<br>NR30 5JW
+      </dd>
+    </div>
+    <div class="-row">
+      <dt class="-key">
+        Number
+      </dt>
+      <dd class="-value">
+        07780110866
+      </dd>
+    </div>
+  </dl>
+
+  <p>
+    <a href="javascript: return false;">Change these details</a>
+  </p>
+
+  <div class="form-group -controls">
+    <a href="dmirs-service-view-stage-2" class="button">Send details</a>
+  </div>
+
+</div>
+
+{% endblock %}
