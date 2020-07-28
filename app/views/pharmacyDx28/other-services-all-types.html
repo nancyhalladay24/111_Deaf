@@ -1,0 +1,240 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <a href="javascript:window.history.back();" class="button-back">Back</a>
+    <h1>Services that can help</h1>
+    <div class="callout callout--warning">
+      <p>COVID-19 and social distancing means that some pharmacies are asking people to phone first. </p>
+    </div>
+      <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+    <!-- timing info -->
+  </div>
+  <div class="multiple-service-listing">
+
+    <!-- A place you go **************************************************** -->
+    <!-- “JUST VISIT” ****************************************************** -->
+
+      <div class="service-listing">
+        <b>Lloyds Pharmacy</b><br>
+        <div class="service-pertinent">
+          <span class="small">Telephone service</span>
+        </div>
+        <p></p>
+        <div class="unit">
+          <h4>
+          <a>Call 01482 301701</a>
+          </h4>
+        <p>Open until 6pm</p>
+        </div>
+      </div>
+
+    <!-- A place you go but need an appointment **************************** -->
+    <!-- “PHONE AND GO” **************************************************** -->
+    <div class="collapse-title">
+      <div class="service-listing">
+        <b>Day Lewis Pharmacy</b><br>
+        <div class="service-pertinent">
+          <span class="small">5 miles away</span>
+        </div>
+        <p></p>
+        <div class="unit">
+          {% set opening = "Open until 8pm"%}
+          {% set suppress_full = true %}
+          {% include 'service-display/_components/opening-hours.html' %}
+        </div>
+        <span class="collapse-title-indicator-verbose">
+          <span class="show">More information</span>
+          <span class="hide">Hide</span>
+        </span>
+      </div>
+    </div>
+    <div class="collapse-content">
+      <div class="service-details-container">
+        <div class="details-1 service-details">
+          <div class="unit">
+            <p>
+            <a>01493 842737</a>
+            </p>
+          </div>
+          <div class="unit address">
+            <p>
+              Day Lewis Pharmacy<br>
+              147 Lawn Avenue<br>
+              Great Yarmouth<br>
+              Norfolk<br>
+              NR30 1QP
+            </p>
+          </div>
+
+        </div>
+        <div class="subroutine measure"></div>
+        <div class="geo">
+          <div id="service-location" class="map-frame">
+            <a href="javascript: return false;">
+              <img src="
+                https://maps.googleapis.com/maps/api/staticmap?
+                  &zoom=11
+                  &size=572x464
+                  &maptype=roadmap
+                  &markers=53.701942,-1.649995
+                  &markers=anchor:bottom
+                    %7Cicon:https://demotive.com/assets/icon-maps-user-location.png
+                    %7C53.804741,-1.564623
+                  &key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM
+              ">
+            </a>
+          </div>
+        </div>
+        <div class="details-2 service-details">
+          <div class="unit">
+            <p>
+              <a href="javascript: return false;" target="_blank">
+                Get directions <span class="small">(opens a new tab or window)</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- A place you must "REFER THEN CALL" yourself to ******************** -->
+    <!-- “ITK ONLY AND RING AND GO” **************************************** -->
+    <div class="collapse-title">
+      <div class="service-listing">
+        <b>St George’s Pharmacy</b>
+        <div class="service-pertinent">
+          <span class="small">2 miles away</span>
+        </div>
+        <p></p>
+        <div class="opening-times">
+          <p>Open tomorrow at 8am</p>
+        </div>
+        <span class="collapse-title-indicator-verbose">
+          <span class="show">More information</span>
+          <span class="hide">Hide</span>
+        </span>
+      </div>
+    </div>
+    <div class="collapse-content">
+      <div class="service-details-container">
+        <div class="details-1 service-details">
+          <div class="unit">
+            <p>
+            <a>01482 720299</a>
+            </p>
+          </div>
+          <div class="unit address">
+            <p>
+              46 St Georges Road<br>
+              Reedham<br>
+              Norfolk<br>
+              NR30 5JW
+            </p>
+          </div>
+        </div>
+        <div class="subroutine measure"></div>
+        <div class="geo">
+          <div id="service-location" class="map-frame">
+            <a href="javascript: return false;">
+              <img src="
+                https://maps.googleapis.com/maps/api/staticmap?
+                  &zoom=11
+                  &size=572x464
+                  &maptype=roadmap
+                  &markers=53.701942,-1.649995
+                  &markers=anchor:bottom
+                    %7Cicon:https://demotive.com/assets/icon-maps-user-location.png
+                    %7C53.804741,-1.564623
+                  &key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM
+              ">
+            </a>
+          </div>
+        </div>
+        <div class="details-2 service-details">
+          <div class="unit">
+            <p>
+              <a href="javascript: return false;" target="_blank">
+                Get directions <span class="small">(opens a new tab or window)</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="collapse-title">
+    <div class="service-listing">
+      <div class="unit">
+      <b>Book a call with a pharmacist</b
+        </div>
+        <div class="unit">
+          <p></p>
+          {% set opening = "Open until 8pm"%}
+          {% set suppress_full = true %}
+          {% include 'service-display/_components/opening-hours.html' %}
+        </div>
+
+    <div class="unit">
+      <div class="measure">
+        <span class="form-hint small">This service needs some details from you.
+        Fill in the form and they'll be in touch.</span>
+      </div>
+      <p>
+        <a class="nhsuk-action-link__link" href="#">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+          <span class="nhsuk-action-link__text">Use this service</span>
+        </a>
+      </p>
+    </div>
+    </div>
+    </div>
+
+  <div class="unit">
+    <br>
+    <p>
+      These services are available in [postcode]. <a href="javascript: return false;">Change my location</a>
+    </p>
+    <div class="measure">
+    <details>
+      <summary>Why is this the recommended service?</summary>
+      <div>
+        <p>
+          We show you nearby services that are open now, or will be within the time you've been advised to get help.
+        </p>
+      </div>
+    </details>
+  </div>
+    </div>
+    </div>
+
+  <div class="measure">
+      <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  {% set acuity = "low" %}
+  {% include 'service-display/_components/worsening-symptoms.html' %}
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+{% endblock %}
