@@ -41,7 +41,7 @@
     "grunt-sass": "^1.2.1",
     "javascript-natural-sort": "^0.7.1",
     "load-grunt-tasks": "^3.5.2",
-    "moment-timezone": "^0.5.28",
+    "moment-timezone": "^0.5.35",
     "nhsuk-frontend": "^2.3.2",
     "npm": "^6.14.1",
     "nunjucks": "^3.2.0",
